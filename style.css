@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 40;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777777;
+  padding: 15px;
+}
+
+.header {
+  height: 100%;
+  background-image: linear-gradient(to right bottom, #fdfffd3f, #ffffff00),
+    url("images/movie.jpg");
+  background-size: cover;
+  background-position: top;
+  /* mordern css porperty  clip-path learn more about it . We can use clippy tool to get the co-ordinate positions for the shapes we want try it out.*/
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  padding: 13px;
+  height: 66px;
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  animation: example2 5s;
+}
+
+/* .logo-box::after {
+  content: "Gltich";
+  padding: 2px;
+  position: absolute;
+  display: inline-block;
+} */
+
+.text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 4rem;
+  font-weight: 40rem;
+  letter-spacing: 3.5rem;
+  animation-name: example1;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  backface-visibility: hidden;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  animation-name: example2;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  padding-bottom: 2rem;
+}
+
+.form {
+  display: block;
+  position: absolute;
+  top: 75%;
+  left: 44%;
+  transform: translate(-35%, -50%);
+  text-align: center;
+}
+
+.form-text {
+  display: block;
+  position: relative;
+  width: 30rem;
+  height: 3rem;
+  outline: none;
+  transition: all 0.1s ease;
+  padding: 1.5rem;
+}
+
+.form-text:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.753);
+}
+
+.form-text::-webkit-input-placeholder {
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.form-text:-webkit-input-placeholder {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3rem);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline-style: none;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.753);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 10px rgba(0, 0, 1, 0.349);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white {
+  background-color: rgb(248, 248, 248);
+  color: black;
+  margin-top: 40px;
+  width: 180px;
+}
+
+.btn-white::after {
+  background-color: rgb(248, 248, 248);
+}
+
+.btn:hover:active::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animation {
+  animation: btn-animation 1s ease-in;
+}
+
+/* card section */
+
+.card1 {
+  perspective: 150rem;
+  position: relative;
+}
+
+.card-text {
+  height: 10rem;
+  transition: all 9s ease;
+  backface-visibility: hidden;
+}
+
+.card1:hover .card-side1 {
+  transform: rotateY(180deg);
+}
+
+.card-side1 {
+  background-color: orangered;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.card-side2 {
+  transform: rotateY(-180deg);
+  background-color: aquamarine;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.card-side2:hover {
+  transform: rotateY(0);
+}
+
+.row {
+  margin: 10rem 2rem;
+}
+
+/* Styles for navigation*/
+
+.navigation-checkbox {
+  display: none;
+}
+
+.navigation-button {
+  background-color: rgb(250, 249, 249);
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 1rem;
+  right: 1.19rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem #00000042;
+}
+
+.navigation-background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  background-image: radial-gradient(#2afc6c, rgb(113, 252, 120));
+  position: fixed;
+  right: 2rem;
+  top: 1.19rem;
+  z-index: 1000;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navigation-nav {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.4s;
+}
+
+.navigation-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  padding: 1rem, 2rem;
+}
+
+.navigation-link:link {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 300;
+
+  text-decoration: none;
+
+  background-image: linear-gradient(
+    130deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 250%;
+  transition: all 0.4s;
+}
+
+.navigation-link:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    130deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 250%;
+  transition: all 0.4s;
+}
+
+.navigation-link:hover {
+  background-position: 100%;
+  color: black;
+  transform: translateX(1rem);
+}
+
+.navigation-link:active {
+  background-position: 100%;
+  color: black;
+  transform: translateX(1rem);
+}
+
+.navigation-item {
+  margin: 0.9rem;
+  padding: 1rem 2rem;
+}
+
+.navigation-checkbox:checked ~ .navigation-background {
+  transform: scale(90);
+}
+
+.navigation-checkbox:checked ~ .navigation-nav {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Navigation-icon */
+.navigation-icon1 {
+  width: 2rem;
+  height: 40px;
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+}
+.navigation-icon2 {
+  width: 2rem;
+  height: 40px;
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  opacity: 0;
+}
+.navigation-icon1:hover ~ .span > img {
+  content: "";
+  width: 2rem;
+  height: 40px;
+  display: inline-block;
+  opacity: 1;
+}
+
+@keyframes example1 {
+  0% {
+    opacity: 0.25;
+    transform: translateX(-100px);
+  }
+
+  70% {
+    opacity: 0.8;
+    transform: translateX(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes example2 {
+  0% {
+    opacity: 0.25;
+    transform: translateX(100px);
+  }
+
+  70% {
+    opacity: 0.8;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes btn-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
